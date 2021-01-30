@@ -20,7 +20,7 @@ if [[ ! $(which lxd) ]]; then
 fi
 
 # Ensure that storage pool exists.
-if
+#if
 
 # Ensure initialization of lxd.
 if [[ ! $(lxc list | grep dulu) ]]; then
