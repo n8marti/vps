@@ -28,5 +28,5 @@ fi
 
 # Ensure creation of dulu server container.
 if [[ ! $(lxc list | grep 'dulu-1804') ]]; then
-    lxc launch ubuntu:18.04 dulu-1804 --verbose
+    lxc launch ubuntu:18.04 dulu-1804 --verbose --profile=default --profile=dulu
 fi
