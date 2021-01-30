@@ -8,8 +8,8 @@ config:
 storage_pools:
 - name: dulu
   driver: zfs
-# config:
-#    source: disks/dulu.img
+  config:
+    source: disks/dulu.img
 
 # Network devices
 networks:
