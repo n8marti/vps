@@ -7,6 +7,7 @@ PARENT_DIR=$(dirname $(realpath $0))
 
 # Ensure installation of snapd.
 if [[ ! $(which snap) ]]; then
+    echo "Updating and installing snap package..."
     sudo apt-get --yes update
     sudo apt-get --yes upgrade
     sudo apt-get --yes install snap
@@ -14,9 +15,12 @@ fi
 
 # Ensure installation of lxd.
 if [[ ! $(which lxd) ]]; then
+    echo "Installing lxd"
     sudo snap install lxd
 fi
 
 # Ensure initialization of lxd.
-preseed_file="${PARENT_DIR}/lxd-dulu-preseed.yaml"
-cat "$preseed_file" | lxd init --preseed
+if [[ ! $(lxc list | grep dulu) ]]; then
+    preseed_file="${PARENT_DIR}/lxd-dulu-preseed.yaml"
+    cat "$preseed_file" | lxd init --preseed
+fi
