@@ -33,5 +33,8 @@ if [[ ! $(lxc list | grep "$NAME") ]]; then
 fi
 
 # Login to ubuntu user.
-echo "$NAME has been setup. Logging in..."
+echo "The $NAME instance has been setup."
+echo "After login, to setup or update dulu use:"
+echo "ubuntu@dulu-1804:~\$ git clone https://github.com/n8marti/dulu.git"
+echo "Logging in..."
 lxc exec "$NAME" -- sudo --login --user ubuntu
