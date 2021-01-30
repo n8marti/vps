@@ -34,7 +34,7 @@ fi
 
 # Login to ubuntu user.
 echo "The $NAME instance has been setup."
-echo "After login, to setup or update dulu use:"
+echo "After login, to setup or update dulu use dulu-server-setup.sh from:"
 echo "ubuntu@dulu-1804:~\$ git clone https://github.com/n8marti/dulu.git"
 echo "Logging in..."
 lxc exec "$NAME" -- sudo --login --user ubuntu
