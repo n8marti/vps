@@ -9,7 +9,7 @@ storage_pools:
 - name: dulu
   driver: zfs
   config:
-    size: 10G
+    size: 10GB
     source: disks/dulu.img
 
 # Network devices
