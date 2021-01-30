@@ -1,0 +1,38 @@
+# Daemon settings
+config:
+  core.https_address: '[::]:8443'
+  core.trust_password: sekret
+  images.auto_update_interval: 23
+
+# Storage pools
+storage_pools:
+- name: dulu
+  driver: zfs
+  config:
+    source: disks/dulu.img
+
+# Network devices
+networks:
+- name: lxdbr0
+  type: bridge
+  config:
+    ipv4.address: auto
+    ipv6.address: none
+
+# Profiles
+profiles:
+- name: default
+  devices:
+    root:
+      path: /
+      pool: data
+      type: disk
+- name: dulu
+  description: "dulu server"
+  config:
+    limits.memory: 1GB
+  devices:
+    eth0:
+      name: eth0
+      network: lxdbr0
+      type: nic
