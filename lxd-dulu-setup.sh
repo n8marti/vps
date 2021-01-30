@@ -35,6 +35,7 @@ fi
 
 # Create dulu user on dulu-1804.
 if [[ ! $(lxc exec "$NAME" -- grep dulu /etc/passwd) ]]; then
+    echo "Creating $DULU_USER user..."
     lxc exec "$NAME" -- adduser --gecos 'Dulu,,,' --disabled-login --uid 1999 $DULU_USER
     lxc exec "$NAME" -- adduser $DULU_USER adm
     lxc exec "$NAME" -- adduser $DULU_USER sudo
