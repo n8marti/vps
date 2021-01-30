@@ -15,7 +15,7 @@ fi
 
 # Ensure installation of lxd.
 if [[ ! $(which lxd) ]]; then
-    echo "Installing lxd"
+    echo "Installing lxd..."
     sudo snap install lxd
 fi
 
@@ -24,6 +24,7 @@ fi
 
 # Ensure initialization of lxd.
 if [[ ! $(lxc list | grep dulu) ]]; then
+    echo "Initializing lxd..."
     preseed_file="${PARENT_DIR}/lxd-dulu-preseed.yaml"
     cat "$preseed_file" | sudo lxd init --preseed
 fi

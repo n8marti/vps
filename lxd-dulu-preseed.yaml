@@ -10,7 +10,7 @@ storage_pools:
   driver: zfs
   config:
     size: 10GB
-    source: disks/dulu.img
+    source: /var/snap/lxd/common/lxd/disks/dulu.img
 
 # Network devices
 networks:
