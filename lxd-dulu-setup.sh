@@ -5,7 +5,7 @@
 
 PARENT_DIR=$(dirname $(realpath $0))
 NAME='dulu-1804'
-$DULU_USER='dulu'
+DULU_USER='dulu'
 
 # Ensure installation of snapd.
 if [[ ! $(which snap) ]]; then
