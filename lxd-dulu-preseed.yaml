@@ -37,3 +37,7 @@ profiles:
       name: eth0
       network: lxdbr0
       type: nic
+    https_proxy:
+      connect: tcp:127.0.0.1:3000
+      listen: tcp:0.0.0.0:443
+      type: proxy

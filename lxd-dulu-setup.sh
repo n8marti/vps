@@ -19,11 +19,8 @@ if [[ ! $(which lxd) ]]; then
     sudo snap install lxd
 fi
 
-# Ensure that storage pool exists.
-#if
-
 # Ensure initialization of lxd.
-if [[ ! $(lxc list | grep dulu) ]]; then
+if [[ ! $(lxc storage list | grep dulu) ]]; then
     echo "Initializing lxd..."
     preseed_file="${PARENT_DIR}/lxd-dulu-preseed.yaml"
     cat "$preseed_file" | sudo lxd init --preseed
