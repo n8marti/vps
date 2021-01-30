@@ -25,3 +25,8 @@ if [[ ! $(lxc storage list | grep dulu) ]]; then
     preseed_file="${PARENT_DIR}/lxd-dulu-preseed.yaml"
     cat "$preseed_file" | sudo lxd init --preseed
 fi
+
+# Ensure creation of dulu server container.
+if [[ ! $(lxc list dulu) ]]; then
+    lxc launch ubuntu:18.04 dulu-18.04
+fi
