@@ -28,5 +28,6 @@ fi
 
 # Ensure creation of dulu server container.
 if [[ ! $(lxc list dulu) ]]; then
+    echo "Creating dulu-18.04 instance..."
     lxc launch ubuntu:18.04 dulu-18.04
 fi
